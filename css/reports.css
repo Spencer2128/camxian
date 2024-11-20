@@ -1,0 +1,298 @@
+/* Importing Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+/* Reset and basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    min-height: 100vh;
+    background: #F0F4FF;
+    display: flex;
+    margin: 0; /* Ensure no margin on body */
+    padding: 0; /* Ensure no padding on body */
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 85px; /* default width */
+    background: #161a2d; /* dark background */
+    padding: 25px 20px;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+  
+  .sidebar:hover {
+    width: 260px; /* expanded width on hover */
+  }
+  
+  .sidebar .sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sidebar .sidebar-header img {
+    width: 42px;
+    border-radius: 50%;
+  }
+  
+  .sidebar .sidebar-header h2 {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    white-space: nowrap;
+    margin-left: 0px;
+    display: none;
+    transition: display 0.3s ease;
+  }
+  .sidebar:hover .sidebar-header h2 {
+    display: block;
+    transition: display 0.3s ease;
+ position: fixed;
+}
+.sidebar:hover .sidebar-header img {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+  
+  .sidebar-links {
+    list-style: none;
+    margin-top: 10px;
+    height: 80%;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  
+  .sidebar-links::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .sidebar-links li {
+    padding: 10px 0;
+  }
+  
+  .sidebar-links h4 {
+    color: #fff;
+    font-weight: 500;
+    white-space: nowrap;
+    margin: 10px 0;
+    position: relative;
+  }
+  
+  .sidebar-links h4 span {
+    opacity: 0;
+  }
+  
+  .sidebar:hover .sidebar-links h4 span {
+    opacity: 1;
+  }
+  
+  .sidebar-links .menu-separator {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+    background: #4f52ba;
+    transform: translateY(-50%);
+    transition-delay: 0.2s;
+  }
+  
+  .sidebar:hover .sidebar-links .menu-separator {
+    transition-delay: 0s;
+    transform: scaleX(0);
+  }
+  
+  .sidebar-links li a {
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+    color: #fff;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 15px 10px;
+    text-decoration: none;
+    transition: 0.2s ease;
+  }
+  
+  .sidebar-links li a:hover {
+    color: #161a2d;
+    background: #fff;
+    border-radius: 4px;
+  }
+  
+  .sidebar-links li a:active {
+    background-color: #4f52ba; /* Highlight on active click */
+  }
+  
+  /* Wrapper adjusts main content area and header */
+  .wrapper {
+    display: flex;
+    width: 100%;
+    margin-left: 65px; /* Initial sidebar width */
+    padding: 0; /* Remove padding from wrapper */
+    transition: margin-left 0.4s ease; /* Smooth transition */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+  }
+  
+  .sidebar:hover ~ .wrapper {
+    margin-left: 260px; /* Adjust wrapper's margin when sidebar expands */
+  }
+ 
+  
+  /* Main content area */
+  .main-content {
+    margin-left: 17px;
+    width: calc(100% - 0px);
+    background-color: #e9ecef;
+    padding: 0; /* Remove padding from main content */
+    transition: margin-left 0.4s ease, width 0.4s ease;
+  }
+  
+  .sidebar:hover ~ .main-content {
+    margin-left: 190px;
+    width: calc(100% - 160px);
+    padding-right: 0; /* Ensure no right padding */
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #12223d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    transition: padding-left 0.4s ease, width 0.4s ease;
+  }
+  
+  .sidebar:hover ~ header {
+    padding-left: 260px;
+    width: calc(100% - 155px);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 26px;
+  }
+  
+  header img.Picture {
+    width: 50px;
+    height: auto;
+  }
+
+/* Send Report Section */
+.send-report {
+    margin-bottom: 20px;
+    float: right; /* Aligns the section to the right */
+}
+
+.send-report .btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.send-report .btn:hover {
+    background-color: #2980b9;
+}
+
+
+/* Basic table styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-bordered {
+    border: 1px solid #ddd;
+}
+
+.table th, .table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+
+.text-right {
+    text-align: right;
+}
+
+
+/* Logout Modal */
+.logoutmodal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+}
+
+.logoutmodal .modal-content {
+    margin: 15% auto;
+    padding: 20px;
+    width: 300px;
+    background: #fff;
+    text-align: center;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logoutmodal p {
+    font-size: 18px; /* Larger text */
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.logoutmodal button {
+    padding: 12px 25px; /* Larger buttons */
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.logoutmodal button.yes {
+    background-color: rgb(189, 229, 252);
+    color: green;
+}
+
+.logoutmodal button.no {
+    background-color: rgb(189, 229, 252);
+    color: rgb(255, 0, 0);
+}
+
+.logoutmodal button:hover {
+    opacity: 0.9; /* Slight hover effect */
+}
